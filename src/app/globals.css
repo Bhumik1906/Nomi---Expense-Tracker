@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #F7F6FA;
+    --surface: #FFFFFF;
+    --surface-elevated: #FFFFFF;
+    --primary: #7C5CFC;
+    --primary-soft: #EEE9FF;
+    --primary-hover: #6B49F7;
+    --main-text: #17151C;
+    --secondary-text: #716C7A;
+    --border-color: #E5E1EC;
+    --positive: #20A77A;
+    --positive-soft: #E6F6F1;
+    --negative: #E0525D;
+    --negative-soft: #FDEEEF;
+  }
+
+  .dark {
+    --bg-main: #0F0E13;
+    --surface: #17151C;
+    --surface-elevated: #1E1C24;
+    --primary: #9A82FF;
+    --primary-soft: #29233F;
+    --primary-hover: #896DFD;
+    --main-text: #F7F6FA;
+    --secondary-text: #A7A1B2;
+    --border-color: #2C2934;
+    --positive: #39B88A;
+    --positive-soft: #14352B;
+    --negative: #F06A73;
+    --negative-soft: #3B1B20;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--main-text);
+    font-family: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-poppins {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+}
+
+/* Custom Utilities for Nomi Minimal Lavender Tech Aesthetic */
+.bg-nomi-bg {
+  background-color: var(--bg-main);
+}
+
+.bg-nomi-surface {
+  background-color: var(--surface);
+}
+
+.bg-nomi-surface-elevated {
+  background-color: var(--surface-elevated);
+}
+
+.bg-nomi-primary {
+  background-color: var(--primary);
+}
+
+.bg-nomi-primary-soft {
+  background-color: var(--primary-soft);
+}
+
+.text-nomi-main {
+  color: var(--main-text);
+}
+
+.text-nomi-secondary {
+  color: var(--secondary-text);
+}
+
+.text-nomi-primary {
+  color: var(--primary);
+}
+
+.border-nomi {
+  border-color: var(--border-color);
+}
+
+.text-nomi-positive {
+  color: var(--positive);
+}
+
+.bg-nomi-positive-soft {
+  background-color: var(--positive-soft);
+}
+
+.text-nomi-negative {
+  color: var(--negative);
+}
+
+.bg-nomi-negative-soft {
+  background-color: var(--negative-soft);
+}
+
+/* Glassmorphism restrained accent */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+}
+
+.dark .glass-panel {
+  background: rgba(23, 21, 28, 0.7);
+}
+
+/* Smooth keyframes for Nomi Orbit */
+@keyframes orbit-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbit-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+.animate-orbit {
+  animation: orbit-rotate 35s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-rotate 25s linear infinite reverse;
+}
+
+.animate-pulse-subtle {
+  animation: orbit-pulse 4s ease-in-out infinite;
+}
